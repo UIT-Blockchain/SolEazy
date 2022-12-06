@@ -14,7 +14,7 @@ const TabsDashboard: IComponent<ITabsDashboardProps> = ({ panes }) => {
   return (
     <div className="">
       <Tabs orientation="vertical">
-        <TabList className="mr-12 justify-center overflow-hidden rounded-3xl !bg-red-400">
+        <TabList className="!h-[500px] mr-12 justify-center overflow-hidden rounded-3xl !bg-red-400">
           {panes.map((pane, index) => (
             <Tab key={index} className="w-[91px] !border-none !py-12">
               {pane.menuItem}

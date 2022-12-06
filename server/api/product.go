@@ -22,6 +22,7 @@ type createProductRequest struct {
 type productResponse struct {
 	Pid       string    `json:"pid"`
 	Name      string    `json:"name"`
+	Description string `json:"description"`
 	PriceSol  float64   `json:"price_sol"`
 	PriceUsd  float64   `json:"price_usd"`
 	CreatedAt time.Time `json:"created_at"`
@@ -31,6 +32,7 @@ func newProductResponse(product db.Product) productResponse {
 	return productResponse{
 		Pid:       product.Pid,
 		Name:      product.Name,
+		Description: product.Description,
 		PriceSol:  float64(product.PriceSol),
 		PriceUsd:  float64(product.PriceUsd),
 		CreatedAt: product.CreatedAt,
