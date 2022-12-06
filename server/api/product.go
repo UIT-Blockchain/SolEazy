@@ -19,15 +19,17 @@ type createProductRequest struct {
 	PriceUsd    float64 `json:"price_usd" binding:"required"`
 }
 
-type productRespone struct {
+type productResponse struct {
+	Pid       string    `json:"pid"`
 	Name      string    `json:"name"`
 	PriceSol  float64   `json:"price_sol"`
 	PriceUsd  float64   `json:"price_usd"`
 	CreatedAt time.Time `json:"created_at"`
 }
 
-func newProductResponse(product db.Product) productRespone {
-	return productRespone{
+func newProductResponse(product db.Product) productResponse {
+	return productResponse{
+		Pid:       product.Pid,
 		Name:      product.Name,
 		PriceSol:  float64(product.PriceSol),
 		PriceUsd:  float64(product.PriceUsd),
@@ -88,7 +90,7 @@ func (server *Server) listCustomers(ctx *gin.Context) {
 		return
 	}
 
-	rsp := make([]productRespone, req.PageSize)
+	rsp := make([]productResponse, req.PageSize)
 	for index, value := range products {
 		rsp[index] = newProductResponse(value)
 	}
