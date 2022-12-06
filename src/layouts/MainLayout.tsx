@@ -12,18 +12,18 @@ export const MainLayout: IComponent = ({ children }) => {
 
   return (
     <div
-      className={`h-screen w-full p-4 ${
+      className={`h-full w-full p-4 ${
         darkMode === 'dark' ? 'bg-black' : 'bg-rose-50'
-      }`}
+      } text-black dark:text-white`}
     >
       <div className="flex justify-end">
         <button
           onClick={() => setDarkMode(darkMode !== 'dark' ? 'dark' : 'light')}
-          className="mt-3 rounded-full bg-blue-400 p-2 text-white duration-500 ease-in-out active:scale-75"
+          className="mt-3 rounded-lg bg-blue-400 p-2 text-white duration-500 ease-in-out active:scale-75"
         >
           Change Dark Mode
         </button>
-      </div>
+      </div>{' '}
       <>{children}</>
       <Footer />
     </div>

@@ -1,6 +1,6 @@
 import { DefaultLayout } from '@layouts/DefaultLayout'
-import Products from '../../components/Products'
-import SiteHeading from '../../components/SiteHeading'
+import Products from '@components/Products'
+import SiteHeading from '@components/SiteHeading'
 
 const ShopPage: IPageComponent = () => {
   return (

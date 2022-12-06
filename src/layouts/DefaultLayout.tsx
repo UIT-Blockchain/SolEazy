@@ -4,13 +4,10 @@ import React from 'react'
 import { TransitionLayout } from './TransitionLayout'
 
 export const DefaultLayout: IComponent = ({ children }) => {
-  // Manual switch darkmode with state
-
   const router = useRouter()
 
   return (
-    <div className={`h-screen w-full text-black`}>
-      
+    <div className="h-full w-full">
       <TransitionLayout location={router.pathname}>
         <>{children}</>
       </TransitionLayout>

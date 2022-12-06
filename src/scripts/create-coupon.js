@@ -1,8 +1,6 @@
 import {
-  createAssociatedTokenAccount,
-  createMint,
-  getAssociatedTokenAddress,
   getAccount,
+  getAssociatedTokenAddress,
   mintToChecked,
 } from '@solana/spl-token'
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
@@ -17,7 +15,8 @@ const network = WalletAdapterNetwork.Devnet
 const endpoint = clusterApiUrl(network)
 const connection = new Connection(endpoint)
 
-// Initialise shop account
+// // Initialise shop account
+// '46hZGxjLAduFFrQoLfVo979Rk72Mtx7FaDX2Rrqm6AqS8gN5NfqrqYVvFWJXaS9QNrGQFehjuKK3y6rf2LuQPNMo'
 const shopPrivateKey = process.env.SHOP_PRIVATE_KEY
 if (!shopPrivateKey) {
   throw new Error('SHOP_PRIVATE_KEY not set')

@@ -1,8 +1,8 @@
 import { DefaultLayout } from '@layouts/DefaultLayout'
 import 'react-circular-progressbar/dist/styles.css'
-import BackLink from '../../components/BackLink'
-import Confirmed from '../../components/Confirmed'
-import PageHeading from '../../components/PageHeading'
+import BackLink from '@components/BackLink'
+import Confirmed from '@components/Confirmed'
+import PageHeading from '@components/PageHeading'
 
 const ConfirmedPage: IPageComponent = () => {
   return (
