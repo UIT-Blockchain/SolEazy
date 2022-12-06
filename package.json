@@ -7,6 +7,7 @@
     "app:dev": "next dev",
     "app:build": "yarn anchor:test && next build",
     "app:start": "next start",
+    "server": "cd server && make all",
     "anchor:type": "cp ./target/types/*.ts ./src/types/contract.ts",
     "anchor:idl": "cp ./target/idl/*.json ./src/configs/contract.json",
     "anchor:build": "anchor build && yarn anchor:type && yarn lint:fix",
