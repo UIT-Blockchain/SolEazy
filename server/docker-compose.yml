@@ -18,7 +18,6 @@ services:
     ports:
       - 8080:8080
   guzer-server:
-    restart: unless-stopped
     depends_on:
       - postgres
     build: .

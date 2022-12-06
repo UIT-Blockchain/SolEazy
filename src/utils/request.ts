@@ -27,5 +27,10 @@ const request = (
 
 const getListData = (pageId: number, pageSize: number, name: string) =>
   request('GET', `/api/${name}s`, {}, { page_id: pageId, page_size: pageSize })
-export { getListData, request }
+
+const postData = (data: { [x: string]: any }, name: string) =>
+  request('POST', `/api/${name}`, data, {})
+
+//request('POST', `/api/${name}`, JSON.parse(data), {})
+export { getListData, postData, request }
 export default request
