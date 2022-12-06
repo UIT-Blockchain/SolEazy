@@ -3,18 +3,18 @@ import SiteHeading from '@components/SiteHeading'
 import TabsDashboard from '@components/TabsDashboard'
 import { DefaultLayout } from '@layouts/DefaultLayout'
 import PaymentScreen from '@screens/payment'
+import ProductScreen from '@screens/product'
 import { useAppStore } from '@states/app'
 import { cx } from '@utils/common'
 const HomePage: IPageComponent = () => {
-  const { darkMode } = useAppStore()
   const panes = [
     {
       menuItem: <IconDashboard name="tracking" />,
       render: <PaymentScreen />,
     },
     {
-      menuItem: <IconDashboard name="member" />,
-      render: <div>afhdsfhds</div>,
+      menuItem: <IconDashboard name="product" />,
+      render: <ProductScreen namePage="product" />,
     },
     {
       menuItem: <IconDashboard name="member" />,
