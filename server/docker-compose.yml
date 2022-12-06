@@ -21,8 +21,8 @@ services:
     restart: unless-stopped
     depends_on:
       - postgres
+    build: .
     container_name: guzer-server
-    image: 'guzer-server:latest'
     ports:
       - '8000:8000'
     environment:
