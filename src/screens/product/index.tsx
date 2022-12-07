@@ -18,12 +18,12 @@ const ProductScreen: IComponent<{ namePage: string }> = ({ namePage }) => {
   const fetchData = useCallback(
     async (pageId: number, pageSize: number) =>
       getListData(pageId, pageSize, namePage).then((res) => {
-        if (res.status === 200 && res.data) {
-          const arr = res.data.filter(
-            (item: any) => item[Object.keys(res.data[0])[0]] !== ''
-          )
-          if (arr.length > 0) setProducts(arr)
-        }
+          if (res.status === 200 && res.data) {
+            const arr = res.data.filter(
+              (item: any) => item[Object.keys(res.data[0])[0]] !== ''
+            )
+            if (arr.length > 0) setProducts(arr)
+          }
       }),
     []
   )
