@@ -19,3 +19,8 @@
 6. Sql commandline
   ```make psql```
 
+
+### Install migrate on ubuntu
+```
+sudo apt-get install migrate
+```
