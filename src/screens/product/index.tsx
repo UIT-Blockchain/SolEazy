@@ -1,29 +1,23 @@
+import { ProductsAtom } from '@states/app'
 import { getListData } from '@utils/request'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
+import { useRecoilState } from 'recoil'
 import ProductItem from '../../components/ProductItem'
 
-export interface IProduct {
-  pid: string
-  name: string
-  description: string
-  price_sol: number
-  price_usd: number
-  created_at: string
-}
 const ProductScreen: IComponent<{ namePage: string }> = ({ namePage }) => {
-  const [products, setProducts] = useState<IProduct[]>([])
+  const [products, setProducts] = useRecoilState(ProductsAtom)
   const router = useRouter()
   const fetchData = useCallback(
     async (pageId: number, pageSize: number) =>
       getListData(pageId, pageSize, namePage).then((res) => {
-          if (res.status === 200 && res.data) {
-            const arr = res.data.filter(
-              (item: any) => item[Object.keys(res.data[0])[0]] !== ''
-            )
-            if (arr.length > 0) setProducts(arr)
-          }
+        if (res.status === 200 && res.data) {
+          const arr = res.data.filter(
+            (item: any) => item[Object.keys(res.data[0])[0]] !== ''
+          )
+          if (arr.length > 0) setProducts(arr)
+        }
       }),
     []
   )
@@ -46,9 +40,11 @@ const ProductScreen: IComponent<{ namePage: string }> = ({ namePage }) => {
           Create a new product
         </button>
       </div>{' '}
-      <div className="grid grid-cols-4 gap-8 p-12">
+      <div className="grid grid-cols-4 gap-4 p-12">
         {products.length > 0 &&
-          products.map((product) => <ProductItem {...product}></ProductItem>)}
+          products.map((product, idx) => (
+            <ProductItem key={idx} {...product}></ProductItem>
+          ))}
       </div>
     </div>
   )

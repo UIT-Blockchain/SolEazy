@@ -48,7 +48,7 @@ const NumberInput: IComponent<INumberInputProps> = ({ name, formRef }) => {
         value={number}
         onChange={(e) => setNumber(Number(e.target.value))}
         min={0}
-        className="w-12 border-none bg-gray-200 text-center focus:ring-0"
+        className="w-16 border-none bg-gray-200 text-center focus:ring-0 "
       />
       <button
         type="button"
